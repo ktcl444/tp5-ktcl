@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>后台</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		table{
+			width: 500px;
+			margin: auto;
+		}
+		.pagination li{
+			margin: 10px;
+			float: left;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+<div>列表</div>
+<a href="{:url('country/add')}" rel="external nofollow" >添加</a>
+<table border="1px solid #ddd" cellspacing="1" cellpadding="1" border-collapse ="collapse">
+	<tr>
+		<th>Code</th>
+		<th>Name</th>
+	</tr>
+	<!-- 循环数据  -->
+	{volist name="list" id="vo"}
+	<tr>
+		<td>{$vo.code}</td>
+		<td>{$vo.name}</td>
+	</tr>
+	{/volist}
+</table>
+<!-- 分页器 -->
+{$list ->render()}
+</body>
+</html>
